@@ -1,0 +1,52 @@
+body{
+    background-color: aliceblue;
+}
+
+.brand-logo{
+    height: 100%;
+    color: black !important;
+    padding-left: 20px !important;
+    font-family: 'Ubuntu';
+}
+.navLinkText{
+    font-family: 'Ubuntu';
+    color: black !important;
+}
+.profile{
+    padding-top: 50px;
+    height: 700px;
+    text-align: center;
+}
+.profilePic{
+    height: 100%;
+}
+.picsAndCard{
+   
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    padding-top: 30px;
+}
+
+.flexItem{
+    text-align: center;
+    
+    width: 35%;
+}
+.col.s12.m6{
+    width: 100% !important;
+    text-align: center !important;
+}
+.card-title{
+    font-size: 50px !important;
+    font-family: 'Ubuntu';
+}
+p{
+    font-size: 20px;
+    font-family: 'Ubuntu';
+}
+#pic1{
+   height: 100%;
+}
+
+
