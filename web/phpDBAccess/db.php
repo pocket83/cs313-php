@@ -68,6 +68,18 @@ catch (PDOException $ex) {
                             echo '</p>';
                         }
                     ?>
+                    
+                    <p>Recipes</p>
+                    <div class="recipes"> </div>
+                    <?php
+                        foreach ($db->query('SELECT name, prep_time, serves, instructions FROM recipe') as $row)
+                        {
+                            echo '<p>';
+                            echo '<strong>' . 'Name: ' . $row['name'] . ' ' . 'Prep Time: ' . $row['prep_time'] . ' Serves: ' . $row['serves'] . ' ' . 'Instructions: ' . $row['instructions'];
+                            echo '</p>';
+                        }
+                    ?>
+                    
                 </div>
             </div>
         </div>
