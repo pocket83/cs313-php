@@ -22,7 +22,7 @@ $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPass
     foreach($db->query('SELECT first_name, last_name, email FROM users')as $row)
     {
         echo '<p>';
-        echo '<strong>' . $row['first_name'] . '' . $row['last_name'] . ':';
+        echo '<strong>' . $row['first_name'] . '' . $row['last_name'] . '';
         echo $row['email'];
         echo '</p>';
     }
