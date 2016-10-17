@@ -31,10 +31,15 @@ catch (PDOException $ex) {
  die();
 }
 
-foreach ($db->query('SELECT now()') as $row)
-{
- print "<p>$row[0]</p>\n\n";
-}
+foreach ($db->query('SELECT first_name, last_name, email FROM users') as $row)
+ {
+
+        echo '<p>';
+        echo '<strong>' . $row['first_name'] . '' . $row['last_name'] . ' ';
+        echo $row['email'];
+        echo '</p>';
+
+    }
 
 ?>
 
