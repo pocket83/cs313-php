@@ -54,12 +54,7 @@
             $password = $_POST["password"];
             $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
         }
-        if ($db->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error creating record";
-        }
-    
+       
     ?>
     
     
