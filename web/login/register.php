@@ -73,7 +73,14 @@
         </nav>
     
     
-      
+       <?php
+                        foreach ($db->query('SELECT first_name, last_name, email FROM users') as $row)
+                        {
+                            echo '<p>';
+                            echo '<strong>' . 'First Name: ' . $row['first_name'] . ' ' . 'Last Name' . $row['last_name'] . ' Email: ' . $row['email'];
+                            echo '</p>';
+                        }
+                    ?>
        
     
     
