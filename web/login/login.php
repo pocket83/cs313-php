@@ -14,12 +14,28 @@
     <link rel="stylesheet" type="text/css" href="login.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    
+    <script>
+    
+        function newUser(){
+            
+            
+            
+        }
+    
+    
+    </script>
+    
+    
+    
 </head>
 
 <body>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    
+    <!-- DB ACCESS -->
     <?php
         // default Heroku Postgres configuration URL
         $dbUrl = getenv('DATABASE_URL');
@@ -74,26 +90,28 @@
             </div>
         </div>
     </div>
+    
+    
     <div class="col s12 m6">
         <div class="card  blue-grey ">
             <div class="card-content white-text"> <span class="card-title">Create An Account</span>
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" action="register.php" method="post">
                         <div class="row">
                             <div class="input-field col s6">
-                                <input placeholder="First Name" id="first_name" type="text" class="validate"> </div>
+                                <input placeholder="First Name" name="first_name" type="text" class="validate"> </div>
                             <div class="input-field col s6">
-                                <input placeholder="Last Name" id="last_name" type="text" class="validate"> </div>
+                                <input placeholder="Last Name" name="last_name" type="text" class="validate"> </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input placeholder="Email" id="email" type="email" class="validate"> </div>
+                                <input placeholder="Email" name="email" type="email" class="validate"> </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input placeholder="Password" id="password" type="password" class="validate"> </div>
+                                <input placeholder="Password" name="password" type="password" class="validate"> </div>
                         </div>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit <i class="material-icons right">send</i> </button>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i> </button>
                     </form>
                 </div>
             </div>
