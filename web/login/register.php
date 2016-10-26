@@ -45,6 +45,21 @@
          print "<p>error: $ex->getMessage() </p>\n\n";
          die();
         }
+    
+        if ($_SERVER['REQUEST_METHOD'] -- "POST")
+        {
+            $first_name = $_POST["first_name"];
+            $last_name = $_POST["last_name"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
+        }
+        if ($db->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error creating record";
+        }
+    
     ?>
     
     
@@ -58,7 +73,7 @@
         </nav>
     
     
-        Data: <?php echo $_POST["first_name"]; ?>
+      
        
     
     
