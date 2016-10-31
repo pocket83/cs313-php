@@ -54,6 +54,8 @@
                     if ($password == $row['password']) {
                         $_SESSION['loggedin'] = $first_name;
                         echo "name is set! ";
+                        echo "name is: ";
+                        echo $_SESSION['loggedin'];
                     } else {
                         $_SESSION['error'] = "Invalid credentials";
                         //header("Location: login.php");
