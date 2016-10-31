@@ -52,9 +52,7 @@
             $email = $_POST["email"];
             $password = $_POST["password"];
             $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
-            echo '<script language="javascript">';
-            echo 'alert("Registration was successfull!")';
-            echo '</script>';
+            
         }
     ?>
         <!-- NAVIGATION -->
