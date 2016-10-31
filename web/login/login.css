@@ -43,3 +43,13 @@ body{
     font-family: 'Ubuntu';
     text-align: left;
 }
+
+.alreadyMember{
+    width: 100%;
+    text-align: center
+}
+
+.NotAMember{
+    width: 100%;
+    text-align: center
+}

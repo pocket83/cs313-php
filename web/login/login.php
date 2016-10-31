@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="notAMember">
+    <div class="alreadyMember">
             Already have an account? Click here to sign in!
             <a href="register.php">SIGN IN!</a>
         </div>
