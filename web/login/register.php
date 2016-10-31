@@ -52,7 +52,7 @@
                 $password = $_POST["password"];
                 echo $password;
                 $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
-                echo "This is a test statment";
+                echo "Changing the test message";
         }
         catch (PDOException $ex) {
             print "<p>error: $ex->getMessage() </p>\n\n";
