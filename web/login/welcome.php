@@ -21,31 +21,31 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     
     <!-- DB ACCESS -->
-    <?php
+        <?php
         // default Heroku Postgres configuration URL
-        $dbUrl = getenv('DATABASE_URL');
-
-        if (empty($dbUrl)) {
+//        $dbUrl = getenv('DATABASE_URL');
+//
+//        if (empty($dbUrl)) {
          // example localhost configuration URL with postgres username and a database called cs313db
-         $dbUrl = "postgres://hdghgzswtmkufg:zG8qDA8ZElYXvqeGbhvYJwhMMs@ec2-54-235-155-172.compute-1.amazonaws.com:5432/d5pf61j61flag6";
-        }
+//         $dbUrl = "postgres://hdghgzswtmkufg:zG8qDA8ZElYXvqeGbhvYJwhMMs@ec2-54-235-155-172.compute-1.amazonaws.com:5432/d5pf61j61flag6";
+//        }
 
-        $dbopts = parse_url($dbUrl);
+//        $dbopts = parse_url($dbUrl);
 
-        $dbHost = $dbopts["host"]; 
-        $dbPort = $dbopts["port"]; 
-        $dbUser = $dbopts["user"]; 
-        $dbPassword = $dbopts["pass"];
-        $dbName = ltrim($dbopts["path"],'/');
+//        $dbHost = $dbopts["host"]; 
+//        $dbPort = $dbopts["port"]; 
+//        $dbUser = $dbopts["user"]; 
+//        $dbPassword = $dbopts["pass"];
+//        $dbName = ltrim($dbopts["path"],'/');/
 
-       if ($_SERVER['REQUEST_METHOD'] == "POST") {
+//       if ($_SERVER['REQUEST_METHOD'] == "POST") {
            
-            try{
+//            try{
                 
-                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+//                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
-                $email = $_POST['email'];
-                $password = $_POST['password'];
+//                $email = $_POST['email'];
+//                $password = $_POST['password'];
                 
 //                $q = "SELECT password FROM users WHERE email='"$email"'";
 //                

@@ -59,7 +59,6 @@
             die();
         }
      }
-    exit;
         
     ?>
         <!-- NAVIGATION -->
