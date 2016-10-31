@@ -90,6 +90,7 @@
             </div>
         </div>
         <?php
+        echo "We done got here";
             foreach ($db->query('SELECT first_name, last_name, email FROM users') as $row)
             {
                 echo '<p>';
