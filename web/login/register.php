@@ -16,11 +16,9 @@
 </head>
 
 <body>
-    
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    
     <?php
         // default Heroku Postgres configuration URL
         $dbUrl = getenv('DATABASE_URL');
@@ -54,15 +52,8 @@
             $password = $_POST["password"];
             $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
         }
-        if ($db->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error creating record";
-        }
-    
     ?>
-    
-    
+        <!-- NAVIGATION -->
         <nav>
             <div class="nav-wrapper blue lighten-4"> <a href="hello.html" class="brand-logo">Weston Clark</a>
                 <ul id="nav-mobile" class="right">
@@ -71,22 +62,33 @@
                 </ul>
             </div>
         </nav>
-    
-    
-       <?php
-                        foreach ($db->query('SELECT first_name, last_name, email FROM users') as $row)
-                        {
-                            echo '<p>';
-                            echo '<strong>' . 'First Name: ' . $row['first_name'] . ' ' . 'Last Name' . $row['last_name'] . ' Email: ' . $row['email'];
-                            echo '</p>';
-                        }
-                    ?>
-       
-    
-    
-    
-    
-    
+        <!-- LOG IN -->
+        <div class="col s12 m6">
+            <div class="card  blue-grey ">
+                <div class="card-content white-text"> <span class="card-title">Log In</span>
+                    <div class="row">
+                        <form class="col s12" action="register.php" method="post">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Email" name="email" type="text" class="validate"> </div>
+                                <div class="input-field col s6">
+                                    <input placeholder="Password" name="password" type="password" class="validate"> </div>
+                            </div>
+                            
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Log In<i class="material-icons right">send</i> </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+            foreach ($db->query('SELECT first_name, last_name, email FROM users') as $row)
+            {
+                echo '<p>';
+                echo '<strong>' . 'First Name: ' . $row['first_name'] . ' ' . 'Last Name' . $row['last_name'] . ' Email: ' . $row['email'];
+                echo '</p>';
+            }
+        ?>
 </body>
 
 </html>

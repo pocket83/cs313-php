@@ -63,9 +63,7 @@
     ?>
     
     
-    
-    
-    
+    <!-- NAVIGATION -->
     <nav>
         <div class="nav-wrapper blue lighten-4"> <a href="hello.html" class="brand-logo">Weston Clark</a>
             <ul id="nav-mobile" class="right">
@@ -74,24 +72,10 @@
             </ul>
         </div>
     </nav>
-    <div class="col s12 m6">
-        <div class="card  blue-grey ">
-            <div class="card-content white-text"> <span class="card-title">Log In</span>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Email" id="email" type="email" class="validate"> </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Password" id="password" type="password" class="validate"> </div>
-                </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Login <i class="material-icons right">send</i> </button>
-                </form>
-            </div>
-        </div>
-    </div>
     
     
+    
+    <!-- SIGN UP -->
     <div class="col s12 m6">
         <div class="card  blue-grey ">
             <div class="card-content white-text"> <span class="card-title">Create An Account</span>
