@@ -19,6 +19,8 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    
+    <!-- DB ACCESS -->
     <?php
         // default Heroku Postgres configuration URL
         $dbUrl = getenv('DATABASE_URL');
@@ -36,7 +38,7 @@
         $dbPassword = $dbopts["pass"];
         $dbName = ltrim($dbopts["path"],'/');
 
-        try {
+        try {        
          $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
         }
         catch (PDOException $ex) {
@@ -49,9 +51,13 @@
             $first_name = $_POST["first_name"];
             echo $_POST["first_name"];
             $last_name = $_POST["last_name"];
+            echo $_POST["last_name"];
             $email = $_POST["email"];
+            echo $_POST["email"];
             $password = $_POST["password"];
+            echo $_POST["password"];
             $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
+            echo "This is a test statment";
             
         }
     ?>
