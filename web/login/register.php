@@ -89,6 +89,10 @@
                 </div>
             </div>
         </div>
+        <div class="notAMember">
+            Not a member? Click here to register!
+            <a href="login.php">REGISTER!</a>
+        </div>
 </body>
 
 </html>

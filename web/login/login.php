@@ -76,6 +76,10 @@
             </div>
         </div>
     </div>
+    <div class="notAMember">
+            Already have an account? Click here to sign in!
+            <a href="register.php">SIGN IN!</a>
+        </div>
 </body>
 
 </html>
