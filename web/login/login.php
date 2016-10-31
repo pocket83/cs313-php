@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Log In</title>
+    <title>Sign Up Page</title>
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->

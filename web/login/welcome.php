@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Log In Page</title>
+    <title>Welcome Page</title>
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -38,29 +38,36 @@
         $dbPassword = $dbopts["pass"];
         $dbName = ltrim($dbopts["path"],'/');
 
-        if ($_SERVER['REQUEST_METHOD'] == "POST")
-        {
-            try {        
-                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);    
-    
-                $first_name = $_POST["first_name"];
-                echo $first_name;
-                $last_name = $_POST["last_name"];
-                echo $last_name;
-                $email = $_POST["email"];
-                echo $email;
-                $password = $_POST["password"];
-                echo $password;
-                $db->exec("INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')");
-                echo " New message";
+       if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            try {
+                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+                
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                
+                $q = "SELECT password FROM users WHERE email='"$email"'";
+                foreach ($db->query($q) as $row) {
+                    if ($password === $row['password'])) {
+                        $_SESSION['loggedin'] = $first_name;
+                    } else {
+                        $_SESSION['error'] = "Invalid credentials";
+                        header("Location: login.php");
+                        exit;
+                    }
+                }
+            }
+            catch (PDOException $ex) {
+                print "<p>error: $ex->getMessage() </p>\n\n";
+                die();
+            }
+           
+        echo '<h2 class="headerText">Welcome '. $_SESSION['loggedin'] . '!</h2>';
+        if (!isset($_SESSION['loggedin'])) {
+            $_SESSION['error'] = "Invalid credentials";
+            header("Location: login.php");
+            exit;
         }
-        catch (PDOException $ex) {
-            print "<p>error: $ex->getMessage() </p>\n\n";
-            die();
-        }
-     }
-        
-    ?>
+        ?>
         <!-- NAVIGATION -->
         <nav>
             <div class="nav-wrapper blue lighten-4"> <a href="hello.html" class="brand-logo">Weston Clark</a>
