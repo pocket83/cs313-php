@@ -40,29 +40,29 @@
 
        if ($_SERVER['REQUEST_METHOD'] == "POST") {
            
-            try{
-                
-                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-                
-                $email = $_POST['email'];
-                $password = $_POST['password'];
-                
-                $q = "SELECT password FROM users WHERE email='"$email"'";
-                
-                foreach ($db->query($q) as $row) {
-                    
-                    if ($password === $row['password']) {
-                        $_SESSION['loggedin'] = $first_name;
-                    } else {
-                        $_SESSION['error'] = "Invalid credentials";
-                        header("Location: login.php");
-                        exit;
-                    }
-                }
-            } catch (PDOException $ex) {
-                  print "<p>error: $ex->getMessage() </p>\n\n";
-                  die();
-            }
+//            try{
+//                
+//                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+//                
+//                $email = $_POST['email'];
+//                $password = $_POST['password'];
+//                
+//                $q = "SELECT password FROM users WHERE email='"$email"'";
+//                
+//                foreach ($db->query($q) as $row) {
+//                    
+//                    if ($password === $row['password']) {
+//                        $_SESSION['loggedin'] = $first_name;
+//                    } else {
+//                        $_SESSION['error'] = "Invalid credentials";
+//                        header("Location: login.php");
+//                        exit;
+//                    }
+//                }
+//            } catch (PDOException $ex) {
+//                  print "<p>error: $ex->getMessage() </p>\n\n";
+//                  die();
+//            }
        }
        
            
