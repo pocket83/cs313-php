@@ -47,31 +47,31 @@
                 $email = $_POST['email'];
                 $password = $_POST['password'];
                 
-                $q = "SELECT password FROM users WHERE email='"$email"'";
-                
-                foreach ($db->query($q) as $row) {
-                    
-                    if ($password === $row['password']) {
-                        $_SESSION['loggedin'] = $first_name;
-                    } else {
-                        $_SESSION['error'] = "Invalid credentials";
-                        header("Location: login.php");
-                        exit;
-                    }
-                }
-            }
-        } catch (PDOException $ex) {
-            print "<p>error: $ex->getMessage() </p>\n\n";
-            die();
-        }
+//                $q = "SELECT password FROM users WHERE email='"$email"'";
+//                
+//                foreach ($db->query($q) as $row) {
+//                    
+//                    if ($password === $row['password']) {
+//                        $_SESSION['loggedin'] = $first_name;
+//                    } else {
+//                        $_SESSION['error'] = "Invalid credentials";
+//                        header("Location: login.php");
+//                        exit;
+//                    }
+//                }
+//            }
+//        } catch (PDOException $ex) {
+//            print "<p>error: $ex->getMessage() </p>\n\n";
+//            die();
+//        }
        
            
-        echo '<h2 class="headerText">Welcome '. $_SESSION['loggedin'] . '!</h2>';
-        if (!isset($_SESSION['loggedin'])) {
-            $_SESSION['error'] = "Invalid credentials";
-            header("Location: login.php");
-            exit;
-        }
+//        echo '<h2 class="headerText">Welcome '. $_SESSION['loggedin'] . '!</h2>';
+//        if (!isset($_SESSION['loggedin'])) {
+//            $_SESSION['error'] = "Invalid credentials";
+//            header("Location: login.php");
+//            exit;
+//        }
         ?>
         <!-- NAVIGATION -->
         <nav>
@@ -82,24 +82,8 @@
                 </ul>
             </div>
         </nav>
-        <!-- LOG IN -->
-        <div class="col s12 m6">
-            <div class="card  blue-grey ">
-                <div class="card-content white-text"> <span class="card-title">Log In</span>
-                    <div class="row">
-                        <form class="col s12" action="welcome.php" method="post">
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input placeholder="Email" name="email" type="text" class="validate"> </div>
-                                <div class="input-field col s6">
-                                    <input placeholder="Password" name="password" type="password" class="validate"> </div>
-                            </div>
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Log In<i class="material-icons right">send</i> </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+    
 </body>
 
 </html>
