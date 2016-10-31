@@ -52,10 +52,10 @@
                 foreach ($db->query($q) as $row) {
                     
                     if ($password == $row['password']) {
-                        $_SESSION['loggedin'] = $first_name;
+                        $uers = $first_name;
                         echo "name is set! ";
                         echo "name is: ";
-                        echo $_SESSION['loggedin'];
+                        echo $user;
                     } else {
                         $_SESSION['error'] = "Invalid credentials";
                         //header("Location: login.php");
