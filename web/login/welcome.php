@@ -48,30 +48,30 @@
                 $password = $_POST['password'];
                 
                 $q = "SELECT password FROM users WHERE email='$email'";
-//                
-//                foreach ($db->query($q) as $row) {
-//                    
-//                    if ($password === $row['password']) {
-//                        $_SESSION['loggedin'] = $first_name;
-//                    } else {
-//                        $_SESSION['error'] = "Invalid credentials";
-//                        header("Location: login.php");
-//                        exit;
-//                    }
-//                }
+                
+                foreach ($db->query($q) as $row) {
+                    
+                    if ($password === $row['password']) {
+                        $_SESSION['loggedin'] = $first_name;
+                    } else {
+                        $_SESSION['error'] = "Invalid credentials";
+                        header("Location: login.php");
+                        exit;
+                    }
+                }
             } catch (PDOException $ex) {
-//                  print "<p>error: $ex->getMessage() </p>\n\n";
-//                  die();
+                  print "<p>error: $ex->getMessage() </p>\n\n";
+                  die();
             }
        }
        
            
-//        echo '<h2 class="headerText">Welcome '. $_SESSION['loggedin'] . '!</h2>';
-//        if (!isset($_SESSION['loggedin'])) {
-//            $_SESSION['error'] = "Invalid credentials";
-//            header("Location: login.php");
-//            exit;
-//        }
+        echo '<h2 class="headerText">Welcome '. $_SESSION['loggedin'] . '!</h2>';
+        if (!isset($_SESSION['loggedin'])) {
+            $_SESSION['error'] = "Invalid credentials";
+            header("Location: login.php");
+            exit;
+        }
         ?>
         <!-- NAVIGATION -->
         <nav>
