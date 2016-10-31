@@ -55,8 +55,12 @@
                         $_SESSION['loggedin'] = $first_name;
                     } else {
                         $_SESSION['error'] = "Invalid credentials";
-                        header("Location: login.php");
-                        exit;
+                        //header("Location: login.php");
+                        //exit;
+                        echo "Invalid Cridentials: ";
+                        echo $email;
+                        echo $password;
+                        echo $row['password'];
                     }
                 }
             } catch (PDOException $ex) {
