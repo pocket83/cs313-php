@@ -63,15 +63,7 @@
                   die();
             }
        }
-       
-           
-        echo '<h2 class="headerText">Welcome '. $user . '!</h2>';
-        if (!isset($_SESSION['loggedin'])) {
-            $_SESSION['error'] = "Invalid credentials";
-           // header("Location: login.php");
-           // exit;
-        }
-        ?>
+       ?>
         <!-- NAVIGATION -->
         <nav>
             <div class="nav-wrapper blue lighten-4"> <a href="hello.html" class="brand-logo">Weston Clark</a>
@@ -81,6 +73,9 @@
                 </ul>
             </div>
         </nav>
+    <?php
+        echo '<h2 class="headerText">Welcome '. $user . '!</h2>';
+    ?>
         
     
 </body>
