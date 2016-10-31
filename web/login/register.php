@@ -51,7 +51,7 @@
                 echo $email;
                 $password = $_POST["password"];
                 echo $password;
-                $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
+                $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password');";
                 echo "Changing the test message";
         }
         catch (PDOException $ex) {
