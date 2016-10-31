@@ -47,7 +47,7 @@
                 $email = $_POST['email'];
                 $password = $_POST['password'];
                 
-                $q = "SELECT password FROM users WHERE email='"$email"'";
+                $q = "SELECT password FROM users WHERE email='$email'";
 //                
 //                foreach ($db->query($q) as $row) {
 //                    
