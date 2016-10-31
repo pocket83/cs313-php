@@ -41,11 +41,11 @@
        if ($_SERVER['REQUEST_METHOD'] == "POST") {
            
             try{
-//                
-//                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-//                
-//                $email = $_POST['email'];
-//                $password = $_POST['password'];
+                
+                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+                
+                $email = $_POST['email'];
+                $password = $_POST['password'];
 //                
 //                $q = "SELECT password FROM users WHERE email='"$email"'";
 //                
