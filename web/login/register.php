@@ -38,28 +38,28 @@
         $dbPassword = $dbopts["pass"];
         $dbName = ltrim($dbopts["path"],'/');
 
-        try {        
-         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-        }
-        catch (PDOException $ex) {
-         print "<p>error: $ex->getMessage() </p>\n\n";
-         die();
-        }
-    
         if ($_SERVER['REQUEST_METHOD'] == "POST")
         {
-            $first_name = $_POST["first_name"];
-            echo $_POST["first_name"];
-            $last_name = $_POST["last_name"];
-            echo $_POST["last_name"];
-            $email = $_POST["email"];
-            echo $_POST["email"];
-            $password = $_POST["password"];
-            echo $_POST["password"];
-            $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
-            echo "This is a test statment";
-            
+            try {        
+                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);    
+    
+                $first_name = $_POST["first_name"];
+                echo $_POST["first_name"];
+                $last_name = $_POST["last_name"];
+                echo $_POST["last_name"];
+                $email = $_POST["email"];
+                echo $_POST["email"];
+                $password = $_POST["password"];
+                echo $_POST["password"];
+                $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
+                echo "This is a test statment";
         }
+        catch (PDOException $ex) {
+            print "<p>error: $ex->getMessage() </p>\n\n";
+            die();
+        }
+     }
+        
     ?>
         <!-- NAVIGATION -->
         <nav>
