@@ -51,6 +51,7 @@
             $email = $_POST["email"];
             $password = $_POST["password"];
             $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
+            alert("Registered successfully!");
         }
     ?>
         <!-- NAVIGATION -->
