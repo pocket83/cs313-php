@@ -44,13 +44,13 @@
                 $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);    
     
                 $first_name = $_POST["first_name"];
-                echo $_POST["first_name"];
+                echo $first_name;
                 $last_name = $_POST["last_name"];
-                echo $_POST["last_name"];
+                echo $last_name;
                 $email = $_POST["email"];
-                echo $_POST["email"];
+                echo $email;
                 $password = $_POST["password"];
-                echo $_POST["password"];
+                echo $password;
                 $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
                 echo "This is a test statment";
         }
