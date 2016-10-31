@@ -40,7 +40,7 @@
 
        if ($_SERVER['REQUEST_METHOD'] == "POST") {
            
-//            try{
+            try{
 //                
 //                $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 //                
@@ -59,10 +59,10 @@
 //                        exit;
 //                    }
 //                }
-//            } catch (PDOException $ex) {
+            } catch (PDOException $ex) {
 //                  print "<p>error: $ex->getMessage() </p>\n\n";
 //                  die();
-//            }
+            }
        }
        
            
