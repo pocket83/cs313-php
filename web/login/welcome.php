@@ -53,7 +53,9 @@
                     
                     if ($password == $row['password']) {
                         echo $row['password'];
-                        echo $row;
+                        echo "  ~  ";
+                        echo $row['first_name'];
+                        echo "  ~  ";
                         $user = $row['first_name'];
                         echo "name is set! ";
                         echo "name is: ";
