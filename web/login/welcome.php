@@ -39,15 +39,19 @@
         $dbName = ltrim($dbopts["path"],'/');
 
        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            try {
+           
+            try{
+                
                 $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
                 
                 $email = $_POST['email'];
                 $password = $_POST['password'];
                 
                 $q = "SELECT password FROM users WHERE email='"$email"'";
+                
                 foreach ($db->query($q) as $row) {
-                    if ($password === $row['password'])) {
+                    
+                    if ($password === $row['password']) {
                         $_SESSION['loggedin'] = $first_name;
                     } else {
                         $_SESSION['error'] = "Invalid credentials";
@@ -56,10 +60,11 @@
                     }
                 }
             }
-            catch (PDOException $ex) {
-                print "<p>error: $ex->getMessage() </p>\n\n";
-                die();
-            }
+        } catch (PDOException $ex) {
+            print "<p>error: $ex->getMessage() </p>\n\n";
+            die();
+        }
+       
            
         echo '<h2 class="headerText">Welcome '. $_SESSION['loggedin'] . '!</h2>';
         if (!isset($_SESSION['loggedin'])) {
@@ -89,7 +94,6 @@
                                 <div class="input-field col s6">
                                     <input placeholder="Password" name="password" type="password" class="validate"> </div>
                             </div>
-                            
                             <button class="btn waves-effect waves-light" type="submit" name="action">Log In<i class="material-icons right">send</i> </button>
                         </form>
                     </div>
