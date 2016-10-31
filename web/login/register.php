@@ -51,8 +51,8 @@
                 echo $email;
                 $password = $_POST["password"];
                 echo $password;
-                $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password');";
-                echo "Changing the test message";
+                $db->exec("INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')");
+                echo " New message";
         }
         catch (PDOException $ex) {
             print "<p>error: $ex->getMessage() </p>\n\n";
