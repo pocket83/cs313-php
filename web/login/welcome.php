@@ -52,7 +52,7 @@
                 foreach ($db->query($q) as $row) {
                     
                     if ($password == $row['password']) {
-                        $uers = $row['irst_name'];
+                        $uers = $row['first_name'];
                         echo "name is set! ";
                         echo "name is: ";
                         echo $user;
