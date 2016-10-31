@@ -52,22 +52,10 @@
                 foreach ($db->query($q) as $row) {
                     
                     if ($password == $row['password']) {
-                        echo $row['password'];
-                        echo "  ~  ";
-                        echo $row['first_name'];
-                        echo "  ~  ";
                         $user = $row['first_name'];
-                        echo "name is set! ";
-                        echo "name is: ";
-                        echo $user;
                     } else {
-                        $_SESSION['error'] = "Invalid credentials";
-                        //header("Location: login.php");
-                        //exit;
-                        echo "Invalid Cridentials: ";
-                        echo $email;
-                        echo $password;
-                        echo $row['password'];
+                        header("Location: login.php");
+                        exit;
                     }
                 }
             } catch (PDOException $ex) {
@@ -77,12 +65,11 @@
        }
        
            
-        echo '<h2 class="headerText">Welcome '. $_SESSION['loggedin'] . '!</h2>';
+        echo '<h2 class="headerText">Welcome '. $user . '!</h2>';
         if (!isset($_SESSION['loggedin'])) {
             $_SESSION['error'] = "Invalid credentials";
            // header("Location: login.php");
            // exit;
-            echo "We got here";
         }
         ?>
         <!-- NAVIGATION -->
