@@ -1,0 +1,45 @@
+body{
+    background-color:aliceblue;
+}
+
+.brand-logo{
+    height: 100%;
+    color: black !important;
+    padding-left: 20px !important;
+    font-family: 'Ubuntu';
+}
+.navLinkText{
+    font-family: 'Ubuntu';
+    color: black !important;
+}
+.header{
+    text-align: center;
+    font-family: 'Ubuntu';
+}
+
+.survey{
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.col.s12.m6{
+    margin-left: 25%;
+    margin-right: 25%;
+    justify-content: left;
+}
+
+.questions{
+    padding-top: 20px;
+}
+
+.form{
+    text-align: left;
+}
+
+
+.card{
+    font-family: 'Ubuntu';
+    text-align: left;
+}
