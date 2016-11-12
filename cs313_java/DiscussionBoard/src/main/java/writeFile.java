@@ -85,7 +85,8 @@ public class writeFile extends HttpServlet {
                Date today = Calendar.getInstance().getTime();
                String theDate = df.format(today);
             
-            try(FileWriter fw = new FileWriter("C:\\Users\\clark\\Documents\\NetBeansProjects\\cs313_java\\DiscussionBoard\\src\\main\\webapp\\thread.txt", true);
+            try(FileWriter fw = new FileWriter((this.getServletContext().getRealPath("/") + "thread.txt"), true);
+
                     BufferedWriter bw = new BufferedWriter(fw);
                     PrintWriter out = new PrintWriter(bw))
             {
@@ -97,14 +98,13 @@ public class writeFile extends HttpServlet {
                 out.println("<br/><hr/>");
             } catch (IOException e){
                 //handle the exception!
-            }
-                
-            
-            request.getRequestDispatcher("/loggedin.jsp").forward(request, response);
-        
-        
-        
-       
+            }     
+         try {
+               Thread.sleep(2000);
+               request.getRequestDispatcher("/thread.jsp").forward(request, response);
+           } catch(InterruptedException ex) {
+               Thread.currentThread().interrupt();
+           }
     }
 
     /**
