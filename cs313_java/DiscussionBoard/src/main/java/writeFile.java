@@ -7,6 +7,9 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.*;
+import java.util.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -75,21 +78,29 @@ public class writeFile extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            System.out.println("in the doPost method");
+            String username = request.getParameter("username");
+            String post = request.getParameter("post");
+            
+            DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+               Date today = Calendar.getInstance().getTime();
+               String theDate = df.format(today);
             
             try(FileWriter fw = new FileWriter("C:\\Users\\clark\\Documents\\NetBeansProjects\\cs313_java\\DiscussionBoard\\src\\main\\webapp\\thread.txt", true);
                     BufferedWriter bw = new BufferedWriter(fw);
                     PrintWriter out = new PrintWriter(bw))
             {
-                out.println("Jane<br/>");
-                out.println("12/24/2016<br/>");
-                out.println("This is my second example post!</br><hr/>");
+                out.println(username);
+                out.println("<br/>");
+                out.println(theDate);
+                out.println("<br/>");
+                out.println(post);
+                out.println("<br/><hr/>");
             } catch (IOException e){
                 //handle the exception!
             }
                 
             
-            request.getRequestDispatcher("/thread.jsp").forward(request, response);
+            request.getRequestDispatcher("/loggedin.jsp").forward(request, response);
         
         
         

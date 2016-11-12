@@ -1,18 +1,6 @@
-Jane<br/>
-12/24/2016<br/>
-This is my second example post!</br><hr/>
-Jane<br/>
-12/24/2016<br/>
-This is my second example post!</br><hr/>
-Jane<br/>
-12/24/2016<br/>
-This is my second example post!</br><hr/>
-Jane<br/>
-12/24/2016<br/>
-This is my second example post!</br><hr/>
-Jane<br/>
-12/24/2016<br/>
-This is my second example post!</br><hr/>
-Jane<br/>
-12/24/2016<br/>
-This is my second example post!</br><hr/>
+John
+<br/>
+11/12/2016 14:15:11
+<br/>
+Example post 1
+<br/><hr/>

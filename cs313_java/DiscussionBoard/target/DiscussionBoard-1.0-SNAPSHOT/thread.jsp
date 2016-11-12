@@ -41,13 +41,10 @@
         
         <table id="threadTable">
             
-            <!-- <iframe src="thread.txt" ></iframe> -->
             
         </table>
         
-        <?php
-            print "This is a php test";
-            ?>
+        
         
     </body>
 </html>

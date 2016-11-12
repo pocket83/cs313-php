@@ -15,6 +15,7 @@
         <h1>Welcome: ${param.userName}</h1>
         <h3>Enter a new post or click the link to view thread</h3>
         <form action="writeFile" method="POST">
+        <input type="hidden" name="username" value="${param.userName}">
         <textarea id="post" rows="10" cols="70" name="post"></textarea>
         <input type="submit" value="Post">
         </form>
